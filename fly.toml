@@ -5,6 +5,15 @@ kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
 
+[env]
+  DB_CLIENT = "sqlite3"
+  DB_FILENAME = "/data/database/data.db"
+  STORAGE_LOCATIONS = "local"
+  STORAGE_LOCAL_DRIVER = "local"
+  STORAGE_LOCAL_ROOT = "/data/uploads"
+  FLY_PRIMARY_REGION = "sea"
+  PORT = 6055
+
 [experimental]
   allowed_public_ports = []
   auto_rollback = true
@@ -16,7 +25,7 @@ processes = []
   source = "data"
 
 [[services]]
-  internal_port = 8080
+  internal_port = 6055
   processes = ["app"]
   protocol = "tcp"
   script_checks = []
