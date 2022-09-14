@@ -40,7 +40,7 @@ This template comes with GitHub actions workflows to automatically deploy the ap
 
 To push the build image to the remote Fly registry from GitHub action, we need an access token from Fly. We can generate that using the Fly command line, run:
 
-```sh
+```bash
 flyctl auth token
 ```
 
