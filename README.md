@@ -62,11 +62,7 @@ flyctl secrets set ADMIN_EMAIL=[YOUR@EMAIL.com]
 flyctl secrets set ADMIN_PASSWORD=[YOUR-ADMIN-PASSWORD]
 ```
 
-The last secret, is your `PUBLIC_URL`, you can get the initial domain from fly by typing:
-
-```bash
-flyctl info
-```
+The last secret, is your `PUBLIC_URL`, you can get the initial domain from fly by typing: `flyctl info`
 
 To get the current app URL and IP address. The app URL will be `https://YOUR-APP-NAME.fly.dev`. 
 
@@ -113,3 +109,18 @@ GitHub actions workflows are configured to run on push to the `main` branch.
 So let's push the local branch `main` to remote, triggering the workflows.
 
 Once all the checks are passed, and the deployment is complete
+
+
+### Logs
+
+You can check the logs using the command `flyctl logs` from the project directory, containing the `fly.toml` file in the project's root. You can also check the logs from the console by visiting [fly.io/apps](https://fly.io/apps).
+
+### Console
+
+You can also log in to the remote console using the `flyctl ssh console` command.
+
+### Connecting to your database
+
+The sqlite database lives at `/data/database/data.db` in your deployed application. 
+
+You can connect to the live database by running `flyctl ssh console -C database-cli`.
