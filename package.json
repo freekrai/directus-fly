@@ -1,0 +1,15 @@
+{
+  "name": "directus-fly",
+  "version": "1.0.0",
+  "description": "Directus on fly.io example",
+  "scripts": {
+    "deploy": "fly deploy --remote-only",
+    "start": "npx directus start"
+  },
+  "dependencies": {
+     "directus": "^9.17.4",
+     "directus-extension-wpslug-interface": "^1.1.0",
+     "sqlite3": "^5.0.6",
+     "tedious": "^13.0.0"
+  }
+}
