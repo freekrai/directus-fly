@@ -12,8 +12,8 @@ FROM base as deps
 
 WORKDIR /myapp
 
-ADD package.json package-lock.json ./
-RUN yarn install --production=false
+ADD package.json .npmrc ./
+RUN npm install --production=false
 
 # Setup production node_modules
 FROM base as production-deps
@@ -21,8 +21,8 @@ FROM base as production-deps
 WORKDIR /myapp
 
 COPY --from=deps /myapp/node_modules /myapp/node_modules
-ADD package.json package-lock.json ./
-#RUN npm prune --production
+ADD package.json .npmrc ./
+RUN npm prune --production
 
 # Finally, build the production image with minimal footprint
 FROM base
@@ -37,12 +37,7 @@ RUN echo "#!/bin/sh\nset -x\nsqlite3 \$DATABASE_URL" > /usr/local/bin/database-c
 WORKDIR /myapp
 
 COPY --from=production-deps /myapp/node_modules /myapp/node_modules
-#COPY --from=base /myapp/node_modules/.prisma /myapp/node_modules/.prisma
 
-#COPY --from=base /myapp /myapp
-#COPY --from=base /myapp/public /myapp/public
 ADD . .
 
-#CMD ["npm", "start"]
 CMD ["bash", "start.sh"]
-
