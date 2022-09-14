@@ -27,7 +27,7 @@ ADD package.json package-lock.json ./
 # Finally, build the production image with minimal footprint
 FROM base
 
-ENV DATABASE_URL=file:/data/sqlite.db
+ENV DATABASE_URL=file:/data/database/sqlite.db
 ENV PORT="6055"
 ENV NODE_ENV="production"
 
