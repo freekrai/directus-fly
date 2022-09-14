@@ -39,7 +39,7 @@ WORKDIR /myapp
 COPY --from=production-deps /myapp/node_modules /myapp/node_modules
 #COPY --from=base /myapp/node_modules/.prisma /myapp/node_modules/.prisma
 
-COPY --from=base /myapp /myapp
+#COPY --from=base /myapp /myapp
 #COPY --from=base /myapp/public /myapp/public
 ADD . .
 
