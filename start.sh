@@ -6,5 +6,11 @@
 #!/bin/sh
 
 set -ex
+mkdir -p /data/database
+mkdir -p /data/uploads
+chmod -Rf 777 /data/database
+chmod -Rf 777 /data/uploads
+
+
 npx directus bootstrap
 npx directus start
