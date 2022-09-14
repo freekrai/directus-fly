@@ -90,6 +90,15 @@ It's important to note that Volumes are bound to an app in a region and cannot b
 
 You can learn more about Fly Volumes [here][volumes]
 
+You should also update the region in your `fly.toml` file to whichever region you selected:
+
+```toml
+[env]
+  FLY_PRIMARY_REGION = "[REGION]"
+```
+
+The other variables you can leave alone.
+
 ### Deploy 🥳
 
 We are ready for our first deployment.
