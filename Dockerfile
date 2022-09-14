@@ -31,7 +31,7 @@ ENV DATABASE_URL=file:/data/database/sqlite.db
 ENV PORT="6055"
 ENV NODE_ENV="production"
 
-RUN chmod -Rf 777 /data/database && chmod -Rf 777 /data/uploads
+RUN chmod -Rf 777 /data
 
 # add shortcut for connecting to database CLI
 RUN echo "#!/bin/sh\nset -x\nsqlite3 \$DATABASE_URL" > /usr/local/bin/database-cli && chmod +x /usr/local/bin/database-cli
