@@ -1,7 +1,7 @@
 {
   "name": "directus-fly",
   "version": "1.0.0",
-  "description": "Directus on fly.io example",
+  "description": "Directus on fly.io starter",
   "scripts": {
     "deploy": "fly deploy --remote-only",
     "start": "npx directus start"
