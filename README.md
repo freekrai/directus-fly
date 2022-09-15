@@ -124,3 +124,12 @@ You can also log in to the remote console using the `flyctl ssh console` command
 The sqlite database lives at `/data/database/data.db` in your deployed application. 
 
 You can connect to the live database by running `flyctl ssh console -C database-cli`.
+
+### Adding extensions 🔌
+
+There are two ways to add extensions:
+
+1. Via `package.json` like the included `directus-extension-wpslug-interface` extension or
+2. Installed inside the `extensions` folder.
+
+This works the same as any other Directus installation
