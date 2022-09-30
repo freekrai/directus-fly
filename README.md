@@ -77,7 +77,7 @@ You can change this by following Fly's DNS docs and then just update the secret 
 We also need to create a volume in Fly to persist our app data (SQLite DB) so that Fly can persist the data stored across deployments and container restarts. Again, we can do that using the Fly command line.
 
 ```bash
-flyctl volumes create data --region [REGION]] --size 1
+flyctl volumes create data --region [REGION] --size 1
 ```
 
 > Note: REGION should be the region selected when launching the app. You can check the region chosen by running `flyctl regions list`.
