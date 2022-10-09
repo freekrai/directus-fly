@@ -84,7 +84,7 @@ flyctl volumes create data --region [REGION] --size 1
 
 It's important to note that Volumes are bound to an app in a region and cannot be shared between apps in the same region or across multiple regions.
 
-You can learn more about Fly Volumes [here][volumes]
+You can learn more about Fly Volumes [here](https://fly.io/docs/reference/volumes)
 
 You should also update the region in your `fly.toml` file to whichever region you selected:
 
