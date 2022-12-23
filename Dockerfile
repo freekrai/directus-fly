@@ -4,7 +4,7 @@ FROM node:18-bullseye-slim as base
 # set for base and all layer that inherit from it
 ENV NODE_ENV production
 
-RUN apt-get update && apt-get install -y fuse openssl ffmpeg sqlite3 ca-certificates procps python3 make g++
+RUN apt-get update && apt-get install -y fuse openssl ffmpeg sqlite3 gcc ca-certificates procps python3 make g++
 
 # Install all node_modules, including dev dependencies
 FROM base as deps
@@ -12,7 +12,7 @@ FROM base as deps
 WORKDIR /myapp
 
 ADD package.json .npmrc ./
-RUN npm install --production=false
+RUN npm install -g node-gyp && npm install --production=false
 
 # Setup production node_modules
 FROM base as production-deps
