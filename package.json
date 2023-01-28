@@ -7,9 +7,9 @@
     "start": "npx directus start"
   },
   "dependencies": {
-    "directus": "^9.21.0",
+    "directus": "^9.22.4",
     "directus-extension-wpslug-interface": "^1.1.0",
-    "sqlite3": "^5.1.2",
+    "sqlite3": "^5.1.4",
     "tedious": "^15.1.2"
   }
 }
